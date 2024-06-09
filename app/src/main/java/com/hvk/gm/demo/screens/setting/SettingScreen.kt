@@ -1,4 +1,4 @@
-package com.hvk.gm.demo.setting
+package com.hvk.gm.demo.screens.setting
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

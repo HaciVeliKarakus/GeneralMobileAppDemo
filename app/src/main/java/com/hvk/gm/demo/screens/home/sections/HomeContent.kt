@@ -1,4 +1,4 @@
-package com.hvk.gm.demo.sections
+package com.hvk.gm.demo.screens.home.sections
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
@@ -40,7 +40,7 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun HomeScreen() {
+fun HomeContent() {
     val pagerState = rememberPagerState(
         initialPage = 0
     ) {
@@ -132,5 +132,5 @@ private fun SliderArrowIcon(icon: ImageVector, onClick: () -> Unit) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun Preview() {
-    HomeScreen()
+    HomeContent()
 }

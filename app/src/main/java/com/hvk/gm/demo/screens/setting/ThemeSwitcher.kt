@@ -1,4 +1,4 @@
-package com.hvk.gm.demo.setting
+package com.hvk.gm.demo.screens.setting
 
 import androidx.compose.animation.core.AnimationSpec
 import androidx.compose.animation.core.animateDpAsState
