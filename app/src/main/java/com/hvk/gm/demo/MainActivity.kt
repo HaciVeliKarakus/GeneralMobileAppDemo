@@ -36,7 +36,7 @@ import com.hvk.gm.demo.ui.theme.GeneralMobileAppDemoTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+//        enableEdgeToEdge()
 
         setContent {
             MainContent()
@@ -68,26 +68,26 @@ private fun MainContent() {
                                 contentDescription = screen.title
                             )
                         },
-                        label = {
-                            Text(
-                                text = screen.title,
-                                textAlign = TextAlign.Center
-                            )
-                        }
+//                        label = {
+//                            Text(
+//                                text = screen.title,
+//                                textAlign = TextAlign.Center
+//                            )
+//                        }
                     )
                 }
             },
-            layoutType = when (windowWithClass) {
-                WindowWidthSizeClass.EXPANDED -> {
-                    NavigationSuiteType.NavigationDrawer
-                }
-
-                else -> {
-                    NavigationSuiteScaffoldDefaults.calculateFromAdaptiveInfo(
-                        currentWindowAdaptiveInfo()
-                    )
-                }
-            }
+//            layoutType = when (windowWithClass) {
+//                WindowWidthSizeClass.EXPANDED -> {
+//                    NavigationSuiteType.NavigationDrawer
+//                }
+//
+//                else -> {
+//                    NavigationSuiteScaffoldDefaults.calculateFromAdaptiveInfo(
+//                        currentWindowAdaptiveInfo()
+//                    )
+//                }
+//            }
         ) {
             Box(
                 modifier = Modifier.fillMaxSize(),

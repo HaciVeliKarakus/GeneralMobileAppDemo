@@ -40,7 +40,7 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun HomeContent() {
+fun SliderSection() {
     val pagerState = rememberPagerState(
         initialPage = 0
     ) {
@@ -64,7 +64,6 @@ fun HomeContent() {
     }
 
     Box(modifier = Modifier.height(560.dp)) {
-
         HorizontalPager(state = pagerState) {
             Image(
                 painterResource(id = sliderImages[it]),
@@ -90,27 +89,27 @@ fun HomeContent() {
                 }
             }
         }
-        LazyRow(
-            modifier = Modifier
-                .align(Alignment.BottomCenter)
-                .height(40.dp)
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            repeat(sliderImages.size) { iteration ->
-                val color = if (pagerState.currentPage == iteration)
-                    Color.DarkGray
-                else Color.LightGray
-                val size = if (pagerState.currentPage == iteration) 12.dp else 8.dp
-                item(key = "item$iteration") {
-                    Box(
-                        modifier = Modifier
-                            .padding(8.dp)
-                            .background(color, CircleShape)
-                            .size(size)
-                    )
-                }
+
+    }
+    LazyRow(
+        modifier = Modifier
+            .height(40.dp)
+            .fillMaxWidth(),
+        horizontalArrangement = Arrangement.Center,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        repeat(sliderImages.size) { iteration ->
+            val color = if (pagerState.currentPage == iteration)
+                Color.DarkGray
+            else Color.LightGray
+            val size = if (pagerState.currentPage == iteration) 12.dp else 8.dp
+            item(key = "item$iteration") {
+                Box(
+                    modifier = Modifier
+                        .padding(horizontal = 8.dp)
+                        .background(color, CircleShape)
+                        .size(size)
+                )
             }
         }
     }
@@ -132,5 +131,5 @@ private fun SliderArrowIcon(icon: ImageVector, onClick: () -> Unit) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun Preview() {
-    HomeContent()
+    SliderSection()
 }
