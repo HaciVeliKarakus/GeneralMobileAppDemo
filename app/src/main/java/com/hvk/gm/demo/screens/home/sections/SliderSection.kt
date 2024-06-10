@@ -17,6 +17,8 @@ import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.filled.KeyboardArrowRight
 import androidx.compose.material3.Icon
@@ -73,7 +75,7 @@ fun SliderSection() {
             )
         }
         Row(modifier = Modifier.align(Alignment.Center)) {
-            SliderArrowIcon(Icons.Default.KeyboardArrowLeft) {
+            SliderArrowIcon(Icons.AutoMirrored.Filled.KeyboardArrowLeft) {
                 scope.launch {
                     pagerState.animateScrollToPage(
                         page = (pagerState.currentPage - 1 + pagerState.pageCount) % pagerState.pageCount
@@ -81,7 +83,7 @@ fun SliderSection() {
                 }
             }
             Spacer(modifier = Modifier.weight(1f))
-            SliderArrowIcon(Icons.Default.KeyboardArrowRight) {
+            SliderArrowIcon(Icons.AutoMirrored.Filled.KeyboardArrowRight) {
                 scope.launch {
                     pagerState.animateScrollToPage(
                         page = (pagerState.currentPage + 1) % pagerState.pageCount
