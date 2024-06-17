@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -68,6 +69,15 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     implementation(libs.androidx.material.icons.extended)
-    implementation(libs.androidx.compose.material3.adaptive.navigation)
-    implementation(libs.androidx.compose.material3.adaptive.navigation.suite)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.bundles.voyager)
+//    implementation("com.bumble.appyx:appyx-navigation-android:2.0.1")
+//    implementation("com.bumble.appyx:appyx-interactions-android:2.0.1")
+//    implementation("com.bumble.appyx:backstack-android:2.0.1")
+//    implementation("com.bumble.appyx:utils-material3-android:2.0.1")
+//    implementation("com.bumble.appyx:spotlight-android:2.0.1")
+
+
+
+
 }

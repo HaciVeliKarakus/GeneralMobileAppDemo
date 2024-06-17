@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
@@ -20,18 +21,23 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import cafe.adriel.voyager.navigator.LocalNavigator
+import cafe.adriel.voyager.navigator.currentOrThrow
 import com.hvk.gm.demo.R
+import com.hvk.gm.demo.screens.home.PhoneDetailScreens
+import com.hvk.gm.demo.screens.home.phones.Phoenix5GScreen
 import com.hvk.gm.demo.ui.theme.orange
 
 @Composable
 fun ProductCard(product: Product) {
     val configuration = LocalConfiguration.current
     val width = configuration.screenWidthDp.dp
+    val navigator = LocalNavigator.currentOrThrow
+
     Card(
         modifier = Modifier
             .padding(horizontal = 8.dp, vertical = 4.dp)
             .size(width - 8.dp)
-//            .background(gray)
     ) {
         Image(
             painter = painterResource(id = product.logo),
@@ -55,11 +61,20 @@ fun ProductCard(product: Product) {
                 .fillMaxWidth()
                 .padding(16.dp)
         ) {
-            Text(
-                text = "İncele >", color = orange,
-                fontWeight = FontWeight.Bold,
-                fontFamily = FontFamily(Font(R.font.helvetica_neue_medium))
-            )
+            TextButton(onClick = {
+                navigator.push(
+                    when (product.screen) {
+                        PhoneDetailScreens.PHOENIX_5G -> Phoenix5GScreen
+                    }
+                )
+            }) {
+                Text(
+                    text = "İncele >", color = orange,
+                    fontWeight = FontWeight.Bold,
+                    fontFamily = FontFamily(Font(R.font.helvetica_neue_medium))
+                )
+            }
+
             Text(
                 text = "Hemen Satın Al >", color = orange,
                 fontWeight = FontWeight.Bold,

@@ -1,42 +1,35 @@
 package com.hvk.gm.demo
 
+//import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
+//import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffold
+//import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffoldDefaults
+//import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteType
+//import androidx.window.core.layout.WindowWidthSizeClass
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Monitor
-import androidx.compose.material.icons.filled.Recycling
-import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.filled.Smartphone
-import androidx.compose.material3.Icon
+import androidx.compose.foundation.layout.RowScope
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
-import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffold
-import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffoldDefaults
-import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteType
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.window.core.layout.WindowWidthSizeClass
-import com.hvk.gm.demo.screens.home.HomeScreen
+import cafe.adriel.voyager.core.screen.Screen
+import cafe.adriel.voyager.navigator.Navigator
+import cafe.adriel.voyager.navigator.tab.CurrentTab
+import cafe.adriel.voyager.navigator.tab.LocalTabNavigator
+import cafe.adriel.voyager.navigator.tab.Tab
+import cafe.adriel.voyager.navigator.tab.TabNavigator
+import cafe.adriel.voyager.transitions.SlideTransition
+import com.hvk.gm.demo.screens.home.HomeTab
 import com.hvk.gm.demo.screens.setting.SettingScreen
 import com.hvk.gm.demo.ui.theme.GeneralMobileAppDemoTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        enableEdgeToEdge()
 
         setContent {
             MainContent()
@@ -44,74 +37,42 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 private fun MainContent() {
-    var darkTheme by remember { mutableStateOf(false) }
+    GeneralMobileAppDemoTheme() {
 
-    GeneralMobileAppDemoTheme(darkTheme = darkTheme) {
-        var selectedItemIndex by remember {
-            mutableIntStateOf(0)
-        }
-        val windowWithClass =
-            currentWindowAdaptiveInfo().windowSizeClass.windowWidthSizeClass
-        NavigationSuiteScaffold(
-            navigationSuiteItems = {
-                Screen.entries.forEachIndexed { index, screen ->
-                    item(
-                        selected = index == selectedItemIndex,
-                        onClick = {
-                            selectedItemIndex = index
-                        },
-                        icon = {
-                            Icon(
-                                imageVector = screen.icon,
-                                contentDescription = screen.title
-                            )
-                        },
-//                        label = {
-//                            Text(
-//                                text = screen.title,
-//                                textAlign = TextAlign.Center
-//                            )
-//                        }
-                    )
+        TabNavigator(HomeTab) { navigator ->
+            Scaffold(
+                bottomBar = {
+                    NavigationBar {
+                        TabNavigationItem(HomeTab)
+                        TabNavigationItem(SettingScreen)
+                    }
                 }
-            },
-//            layoutType = when (windowWithClass) {
-//                WindowWidthSizeClass.EXPANDED -> {
-//                    NavigationSuiteType.NavigationDrawer
-//                }
-//
-//                else -> {
-//                    NavigationSuiteScaffoldDefaults.calculateFromAdaptiveInfo(
-//                        currentWindowAdaptiveInfo()
-//                    )
-//                }
-//            }
-        ) {
-            Box(
-                modifier = Modifier.fillMaxSize(),
-                contentAlignment = Alignment.Center
             ) {
-                when (selectedItemIndex) {
-                    0 -> HomeScreen()
-                    1 -> HomeScreen()
-                    2 -> HomeScreen()
-                    3 -> SettingScreen(
-                        darkTheme = darkTheme,
-                        onThemeUpdated = { darkTheme = !darkTheme }
-                    )
-                }
+                CurrentTab()
             }
         }
     }
 }
 
-enum class Screen(val title: String, val icon: ImageVector) {
-    SMART_PHONES("Akıllı Telefonlar", Icons.Default.Smartphone),
-    SMART_DEVICES("Akıllı Cihazlar", Icons.Default.Monitor),
-    REPAIRED_DEVICES("Yenilenmiş Ürünler", Icons.Default.Recycling),
-    SETTINGS("Ayarlar", Icons.Default.Settings)
+@Composable
+private fun RowScope.TabNavigationItem(tab: Tab) {
+    val tabNavigator = LocalTabNavigator.current
+    NavigationBarItem(
+        selected = tabNavigator.current == tab,
+        onClick = { tabNavigator.current = tab },
+        icon = { },
+        label = { Text(text = tab.options.title) }
+    )
+}
+
+@Composable
+fun NavigateToDetailOf(screen: Screen) {
+    Navigator(screen) {
+        SlideTransition(navigator = it)
+    }
 }
 
 @Preview(showBackground = true, showSystemUi = true)
