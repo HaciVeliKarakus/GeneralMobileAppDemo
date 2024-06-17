@@ -76,6 +76,7 @@ dependencies {
 //    implementation("com.bumble.appyx:backstack-android:2.0.1")
 //    implementation("com.bumble.appyx:utils-material3-android:2.0.1")
 //    implementation("com.bumble.appyx:spotlight-android:2.0.1")
+    implementation(libs.coil.compose)
 
 
 

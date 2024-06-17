@@ -1,5 +1,6 @@
 package com.hvk.gm.demo.screens.home
 
 enum class PhoneDetailScreens {
-    PHOENIX_5G
+    PHOENIX_5G,
+    GM24_PRO
 }

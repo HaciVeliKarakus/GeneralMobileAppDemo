@@ -1,9 +1,8 @@
 package com.hvk.gm.demo.components
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -22,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AutoBackScaffold(title: String, content: @Composable () -> Unit) {
@@ -39,9 +39,7 @@ fun AutoBackScaffold(title: String, content: @Composable () -> Unit) {
                 })
         }
     ) {
-        Column(modifier = Modifier.padding(it)) {
-            content.invoke()
-        }
+        content.invoke()
     }
 }
 

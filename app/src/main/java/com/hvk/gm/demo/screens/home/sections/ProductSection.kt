@@ -31,10 +31,10 @@ val products = listOf(
         screen = PhoneDetailScreens.PHOENIX_5G
     ),
     Product(
-        logo = R.drawable.logo_png,
+        logo = R.drawable.gm24_logo_black,
         title = "Karşı Konulmaz Performans",
         image = R.drawable.anasayfa_png,
-        screen = PhoneDetailScreens.PHOENIX_5G
+        screen = PhoneDetailScreens.GM24_PRO
 
     ),
     Product(

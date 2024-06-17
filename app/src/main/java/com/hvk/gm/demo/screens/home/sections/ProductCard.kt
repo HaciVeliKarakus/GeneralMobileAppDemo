@@ -25,7 +25,9 @@ import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import com.hvk.gm.demo.R
 import com.hvk.gm.demo.screens.home.PhoneDetailScreens
+import com.hvk.gm.demo.screens.home.phones.GM24ProScreen
 import com.hvk.gm.demo.screens.home.phones.Phoenix5GScreen
+import com.hvk.gm.demo.ui.theme.font
 import com.hvk.gm.demo.ui.theme.orange
 
 @Composable
@@ -49,7 +51,7 @@ fun ProductCard(product: Product) {
         Text(
             text = product.title,
             fontSize = 18.sp,
-            fontFamily = FontFamily(Font(R.font.helvetica_neue_medium)),
+            fontFamily = font,
             textAlign = TextAlign.Center,
             modifier = Modifier
                 .fillMaxWidth()
@@ -65,13 +67,14 @@ fun ProductCard(product: Product) {
                 navigator.push(
                     when (product.screen) {
                         PhoneDetailScreens.PHOENIX_5G -> Phoenix5GScreen
+                        PhoneDetailScreens.GM24_PRO -> GM24ProScreen
                     }
                 )
             }) {
                 Text(
                     text = "İncele >", color = orange,
                     fontWeight = FontWeight.Bold,
-                    fontFamily = FontFamily(Font(R.font.helvetica_neue_medium))
+                    fontFamily = font
                 )
             }
 
