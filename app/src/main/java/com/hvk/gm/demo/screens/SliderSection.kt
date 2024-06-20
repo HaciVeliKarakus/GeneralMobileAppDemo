@@ -1,8 +1,9 @@
-package com.hvk.gm.demo.screens.home.sections
+package com.hvk.gm.demo.screens
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -19,8 +20,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
-import androidx.compose.material.icons.filled.KeyboardArrowLeft
-import androidx.compose.material.icons.filled.KeyboardArrowRight
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
@@ -28,7 +27,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
@@ -36,6 +35,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.hvk.gm.demo.data.sliderImages
+import com.hvk.gm.demo.ui.theme.orange
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -124,8 +124,9 @@ private fun SliderArrowIcon(icon: ImageVector, onClick: () -> Unit) {
             imageVector = icon,
             contentDescription = "",
             modifier = Modifier
-                .shadow(1.dp, shape = CircleShape)
                 .size(40.dp)
+                .border(1.dp, orange, CircleShape),
+            tint = orange
         )
     }
 }

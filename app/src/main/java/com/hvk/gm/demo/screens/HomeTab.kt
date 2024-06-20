@@ -1,7 +1,5 @@
-package com.hvk.gm.demo.screens.home
+package com.hvk.gm.demo.screens
 
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import cafe.adriel.voyager.navigator.Navigator

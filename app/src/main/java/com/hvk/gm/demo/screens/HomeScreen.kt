@@ -1,4 +1,4 @@
-package com.hvk.gm.demo.screens.home
+package com.hvk.gm.demo.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -14,11 +14,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
 import com.hvk.gm.demo.R
-import com.hvk.gm.demo.screens.home.sections.ProductSection
-import com.hvk.gm.demo.screens.home.sections.SliderSection
 
 
 object HomeScreen:Screen{
+    private fun readResolve(): Any = HomeScreen
+
     @Composable
     override fun Content() {
         Scaffold(
@@ -47,5 +47,4 @@ object HomeScreen:Screen{
             }
         }
     }
-
 }

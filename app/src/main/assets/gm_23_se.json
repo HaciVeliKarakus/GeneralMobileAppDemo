@@ -1,0 +1,70 @@
+[
+  {
+    "title": "Tasarımda İkonik Dokunuş",
+    "logo": "https://assets.generalmobile.com/images/gm23se/s1-logo.png.webp",
+    "image": "https://assets.generalmobile.com/images/gm23se/s1-img2.png.webp"
+  },
+  {
+    "title": "Her Çizginin Bir Hikayesi Var",
+    "text": "İkonik tasarımı, buz mavisi ve ay grisi renkleriyle buluşturan GM 23 SE, modern ve şık çizgileriyle sizi kendine çekecek. Üstelik sadece 190 gram!",
+    "image": "https://assets.generalmobile.com/images/gm23se/s2-img2.png"
+  },
+  {
+    "title": "Dünyanızı Renklendirin",
+    "text": "6.52\" HD+ ekranıyla sizi etkileyecek bir görüntü deneyimine hazır olun. 1600x720 px çözünürlüğündeki ekranıyla GM 23 SE gerçeğe en yakın renkleri sunmasının yanında, renklerin canlılığı konusunda da oldukça iddialı.",
+    "video": "https://assets.generalmobile.com/images/gm23se/ekran-video.mp4",
+    "isReversed": true
+  },
+  {
+    "title": "Güçlü ve Dinamik",
+    "text": "Mediatek Helio G37 işlemcisi ve HyperEngine Teknolojisi'nden aldığı güçle GM 23 SE, akıcı ve hızlı bir performans sağlar. 6GB RAM (4GB+2GB Genişletilmiş RAM) sayesinde uygulamaların açılış hızlarında ve uygulamalar arası geçişlerde etkili bir kullanıcı deneyimi sunar.",
+    "image": "https://assets.generalmobile.com/images/gm23se/s4-bg.png.webp",
+    "isReversed": true
+  },
+  {
+    "title": "Güzel Anılarınız için Güvenli Depolama",
+    "text": "GM 23 SE akıllı telefon, sınırsız eğlence ve işlevsellik sunmak için tasarlandı. 128GB depolama alanı sayesinde, tüm dosyalarınızı, fotoğraflarınızı ve videolarınızı telefonunuzda güvenle saklayabilirsiniz. Ayrıca MicroSD Kart desteği sayesinde depolama alanınızı 256GB'a kadar yükseltebilirsiniz.",
+    "image": "https://assets.generalmobile.com/images/gm23se/s5-img4.png",
+    "isReversed": true
+  },
+  {
+    "title": "Uzun Kullanım Deneyimi",
+    "image": "https://assets.generalmobile.com/images/gm23se/s6-img.png.webp",
+    "text": "5000mAh bataryası, uzun pil ömrü sağlar ve yoğun kullanımlarınıza karşı dayanıklı bir performans sunar. Gelişmiş Güç Tasarrufu sayesinde sık sık şarj etmenize gerek kalmaz.",
+    "video": "https://assets.generalmobile.com/images/gm23se/batarya-video.mp4",
+    "isReversed": true
+  },
+  {
+    "title": "32MP Süper Piksel Modu ile Keskin ve Net Fotoğraflar",
+    "text": "Fotoğraf çekme deneyiminizi farklı bir boyuta taşıyoruz. 32MP Süper Piksel Modu'nun sağladığı piksel gruplama teknolojisi sayesinde, pikselleri çoğaltarak fotoğraflarınızda daha fazla ayrıntı ve renk tonu yakalamanıza olanak tanır.",
+    "image": "https://assets.generalmobile.com/images/gm23se/s7-img.png.webp"
+  },
+  {
+    "title": "Alan Derinliği ile Sanatsal Dokunuşlar",
+    "text": "Portre mod sayesinde çekim sırasında arka plan bulanıklığını, güzellik modunu veya filtreyi seçin, başka güzellik uygulamalarına ihtiyaç olmadan doğrudan sosyal medyada paylaşın.",
+    "image": "https://assets.generalmobile.com/images/gm23se/s8-img.png.webp"
+  },
+  {
+    "title": "Geceye Işık Tutun",
+    "text": "Gece modu, harika bir gece fotoğrafı çekmek için ihtiyacınız olan her şeyi sağlar. Gecenin büyüleyici atmosferi ve manzaraları, artık fotoğraflarınızda her zaman canlı kalacak.",
+    "image": "https://assets.generalmobile.com/images/gm23se/s9-img.png.webp",
+    "isReversed": true
+  },
+  {
+    "title": "Kurallarınızı Kendiniz Yazın",
+    "text": "Pro Modu özelliği size ayarlanabilir parametreler sunar. ISO, enstantane hızı, beyaz dengesi ve diyafram gibi ayarları manuel olarak değiştirebilirsiniz. Bu sayede, farklı ışık koşullarına uygun ayarlamalar yaparak etkileyici kareler yakalayabilirsiniz.",
+    "image": "https://assets.generalmobile.com/images/gm23se/s10-img.png.webp"
+  },
+  {
+    "title": "Kendinizi Öne Çıkarın",
+    "text": "GM 23 SE'nin ön kamerası ile ilk odağınız her zaman kendiniz olun. Yüz güzelleştirme efekti sayesinde kusursuz selfieler yakalayın ve öne çıkarın.",
+    "image": "https://assets.generalmobile.com/images/gm23se/s11-img2.png",
+    "isReversed": true
+  },
+  {
+    "title": "Her Zaman Güvende Olun",
+    "text": "GM 23 SE, yüz tanıma ve yan parmak izi sensörü gibi teknolojik özelliklerle üst düzey bir güvenlik deneyimi sunar. Telefonunuzu güvenlik endişesi olmadan rahatça kullanın.",
+    "image": "https://assets.generalmobile.com/images/gm23se/s12-img.png.webp",
+    "isReversed": true
+  }
+]

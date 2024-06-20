@@ -60,6 +60,8 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.ui)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -71,11 +73,6 @@ dependencies {
     implementation(libs.androidx.material.icons.extended)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.bundles.voyager)
-//    implementation("com.bumble.appyx:appyx-navigation-android:2.0.1")
-//    implementation("com.bumble.appyx:appyx-interactions-android:2.0.1")
-//    implementation("com.bumble.appyx:backstack-android:2.0.1")
-//    implementation("com.bumble.appyx:utils-material3-android:2.0.1")
-//    implementation("com.bumble.appyx:spotlight-android:2.0.1")
     implementation(libs.coil.compose)
 
 
